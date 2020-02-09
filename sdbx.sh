@@ -10,7 +10,7 @@ sleep 2
 tar xvf linux-x64-debian-7-0
 rm linux-x64-debian-7-0
 mv /usr/local/utorrent-server-alpha-v3_3/ /usr/local/utorrent && cd /usr/local/utorrent
-apt-get install libssl-dev
+apt install libssl-dev -y
 wget -q http://archive.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5.3_amd64.deb
 dpkg -i libssl1.0.0_1.0.2n-1ubuntu5.3_amd64.deb
 rm libssl1.0.0_1.0.2n-1ubuntu5.3_amd64.deb
