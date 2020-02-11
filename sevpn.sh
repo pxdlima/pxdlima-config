@@ -48,5 +48,6 @@ exit 0' > /etc/init.d/vpnserver
 chmod 755 /etc/init.d/vpnserver && /etc/init.d/vpnserver start
 sysctl -w net.ipv4.ip_forward=1
 sysctl -p
+/usr/local/vpnserver/vpncmd localhost /SERVER /CMD OpenVpnMakeConfig ovpn
 echo ""
 echo "SoftetherVPN Server is now READY!"
