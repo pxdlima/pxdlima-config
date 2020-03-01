@@ -1,5 +1,6 @@
 #!/bin/bash
 rm -rf /usr/local/utorrent && rm /usr/bin/utserver
+ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
 echo "Removing previous uTorrent Server installation..."
 sleep 3
 clear
