@@ -1,5 +1,6 @@
 #!/bin/bash
 clear
+ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
 echo ""
 echo "Initiating Setup..."
 
