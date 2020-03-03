@@ -23,7 +23,7 @@ touch dht.dat
 touch rss.dat
 touch resume.dat
 touch webcache.dat
-wget -q https://github.com/pxdlima/pxdlima-config/raw/master/settings.dat
+wget -q https://github.com/pxdlima/trifle/raw/master/settings.dat
 ln -s /usr/local/utorrent/utserver /usr/bin/utserver
 echo "Whirring up to start.."
 utserver -logfile /usr/local/utorrent/server.log -daemon
