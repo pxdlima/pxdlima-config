@@ -18,15 +18,13 @@ apt install libssl-dev -y
 wget -q http://archive.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5.3_amd64.deb
 dpkg -i libssl1.0.0_1.0.2n-1ubuntu5.3_amd64.deb
 rm libssl1.0.0_1.0.2n-1ubuntu5.3_amd64.deb
-echo "Adding settings.."
+echo "Configuring startup files.."
 touch dht.dat
 touch rss.dat
 touch resume.dat
 touch webcache.dat
-sleep 2
 wget -q https://github.com/pxdlima/pxdlima-config/raw/master/settings.dat
 ln -s /usr/local/utorrent/utserver /usr/bin/utserver
-echo "Starting services.."
-sleep 2
-fi
+echo "Whirring up to start.."
 utserver -logfile /usr/local/utorrent/server.log -daemon
+fi
