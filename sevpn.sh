@@ -1,13 +1,15 @@
 #!/bin/bash
 clear
 ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
+if [ -d /usr/local/vpnserver ]; then
+	echo "SoftEtherVPN detected.."
+else
 echo ""
 echo "Initiating Setup..."
-
 apt update
 apt install build-essential wget curl -y
 apt upgrade -y
-wget http://www.softether-download.com/files/softether/v4.32-9731-beta-2020.01.01-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/softether-vpnserver-v4.32-9731-beta-2020.01.01-linux-x64-64bit.tar.gz
+wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.32-9731-beta/softether-vpnserver-v4.32-9731-beta-2020.01.01-linux-x64-64bit.tar.gz
 tar xvzf softether-vpnserver* && rm -rf softether-vpnserver*
 cd vpnserver && make i_read_and_agree_the_license_agreement && rm *.txt && curl -Os https://raw.githubusercontent.com/pxdlima/trifle/master/vpn_server.config
 cd .. && mv vpnserver /usr/local && chmod 700 /usr/local/vpnserver/vpncmd && chmod 700 /usr/local/vpnserver/vpnserver
@@ -45,10 +47,12 @@ echo "Usage: $0 {start|stop|restart}"
 exit 1
 esac
 exit 0' > /etc/init.d/vpnserver
-
 chmod 755 /etc/init.d/vpnserver && /etc/init.d/vpnserver start
 sysctl -w net.ipv4.ip_forward=1
 sysctl -p
+echo "### ENTER PASSWORD ###"
+sleep 1
 /usr/local/vpnserver/vpncmd localhost /SERVER /CMD OpenVpnMakeConfig ovpn
 echo ""
 echo "SoftetherVPN Server is now READY!"
+fi
