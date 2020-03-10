@@ -3,7 +3,7 @@ clear
 if [ -d /usr/local/utorrent ]; then
 	echo "uTorrent detected.. Exit"
 else
-rm -rf /usr/local/utorrent && rm /usr/bin/utserver
+rm -rf /usr/local/utorrent #&& rm /usr/bin/utserver
 ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
 echo "Removing previous uTorrent Server installation..."
 sleep 2
