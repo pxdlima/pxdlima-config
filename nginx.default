@@ -21,4 +21,8 @@ server {
 	autoindex on;
 	alias /usr/local/utorrent;
       }
+      location ~* \.(ico|txt|svg|css|png)$ {
+        log_not_found off;
+        access_log off;
+    }
 }
