@@ -48,6 +48,7 @@ exit 1
 esac
 exit 0' > /etc/init.d/vpnserver
 chmod 755 /etc/init.d/vpnserver && /etc/init.d/vpnserver start
+ln -fs /etc/init.d/vpnserver /usr/bin/se
 sysctl -w net.ipv4.ip_forward=1
 sysctl -p
 echo "### ENTER PASSWORD ###"
