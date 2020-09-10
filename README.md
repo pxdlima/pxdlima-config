@@ -1,5 +1,5 @@
 # trifle
-A collection of scripts/platforms for anti-censorship.
+A collection of scripts and custom platforms for anti-censorship.
 ## VPN
 curl -Os https://raw.githubusercontent.com/pxdlima/trifle/master/sevpn.sh && chmod +x sevpn.sh && ./sevpn.sh
 ## &micro;Downloader
