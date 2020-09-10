@@ -6,7 +6,7 @@ if [ -d /usr/local/utorrent ]; then
 	rm -rf /usr/local/utorrent
 	rm /usr/bin/utserver
 else
-rm -rf /usr/local/utorrent && rm /usr/bin/utserver
+rm -rf /usr/local/utorrent
 ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
 cd /usr/local/
 echo "Downloading zipped binary.."
