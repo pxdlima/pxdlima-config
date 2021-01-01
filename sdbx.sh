@@ -23,7 +23,7 @@ touch dht.dat
 touch rss.dat
 touch resume.dat
 touch webcache.dat
-wget -q https://github.com/pxdlima/trifle/raw/master/settings.dat
+wget -q https://github.com/pxdlima/trifle/raw/master/files/settings.dat
 ln -s /usr/local/utorrent/utserver /usr/bin/utserver > /dev/null
 echo "[Unit]
 Description=uTorrent service.
